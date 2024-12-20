@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<style>
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid #ddd;
+}
+</style>
+<body>
+	<h1>Customer List Year = 2000</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>DateOfBirth</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cus: ${customers}">
+				<td th:text="${cus.id}"></td>
+				<td th:text="${cus.name}"></td>
+				<td th:text="${cus.email}"></td>
+				<td th:text="${cus.address}"></td>
+				<td th:text="${cus.dob}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
